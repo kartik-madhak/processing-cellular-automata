@@ -3,9 +3,9 @@ package processing.lib.grid;
 import java.util.Arrays;
 
 public class Grid {
-  private int rows;
-  private int cols;
-  private Cell[][] cells;
+  private final int rows;
+  private final int cols;
+  private final Cell[][] cells;
 
   public Grid(int rows, int cols) {
     this.rows = rows;
@@ -34,6 +34,7 @@ public class Grid {
   public Cell getAt(int i, int j) {
     return cells[i][j];
   }
+
   public void setAt(int i, int j, Cell cell) {
     cells[i][j] = cell;
   }

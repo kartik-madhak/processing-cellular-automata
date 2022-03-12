@@ -2,7 +2,6 @@ package processing.conwaysgameoflife;
 
 import processing.core.PApplet;
 import processing.lib.GridRenderer;
-import processing.lib.grid.Cell;
 
 import java.awt.*;
 
@@ -20,17 +19,9 @@ public class Main extends GridRenderer {
     if (mouseButton == LEFT) {
       int i = (int) map(mouseX, 0, width, 0, width / 10.0f);
       int j = (int) map(mouseY, 0, height, 0, height / 10.0f);
-      for (int k = -4; k < 9; k++) {
-        for (int l = -4; l < 9; l++) {
-          if (k % 2 == 0 && l % 2 == 1) setAt(i + k, j + l, new WhiteCell());
-        }
-      }
-    } else {
-      int i = (int) map(mouseX, 0, width, 0, width / 10.0f);
-      int j = (int) map(mouseY, 0, height, 0, height / 10.0f);
-      for (int k = -4; k < 9; k++) {
-        for (int l = -4; l < 9; l++) {
-          if (k % 2 == 0 && l % 2 == 1) setAt(i + k, j + l, new Cell());
+      for (int k = -2; k <= 2; k++) {
+        for (int l = -2; l <= 2; l++) {
+          setAt(i + k, j + l, new WhiteCell());
         }
       }
     }
