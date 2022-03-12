@@ -60,6 +60,7 @@ public abstract class PhysicsMiddleware {
     }
   }
 
+  // Should override this method for specific purposes
   public void execute() {
     for (int i = 0; i < renderGrid.getRows(); i++) {
       for (int j = 0; j < renderGrid.getCols(); j++) {
@@ -76,11 +77,11 @@ public abstract class PhysicsMiddleware {
     bufferedGrid.setAt(ii, jj, cell);
   }
 
+  // ONLY FOR READING FOR UPDATE PURPOSES
   public Cell readBuffered(int i, int j) {
     return bufferedGrid.getAt(i, j);
   }
 
-  // ONLY FOR READING FOR UPDATE PURPOSES
   public Grid getRenderGrid() {
     return renderGrid;
   }
